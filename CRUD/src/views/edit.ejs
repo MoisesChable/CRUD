@@ -7,11 +7,26 @@
                           Datos del registro
                 </div>
                 <div class="card-body">
-                    <form action="/update/<%= datos._id%>" method="POST">
-                        <label for="formGroupExampleInput">Tarea:</label>
-                        <input type="text" class="form-control" name="tarea" value="<%=datos.tarea%>">
-                        <label for="formGroupExampleInput">Fecha de finalización:</label>
-                        <input type="date" class="form-control" name="fecha" value="<%=datos.fecha%>">
+                    <form action="/admin/update/<%= datos._id%>" method="POST">
+                        
+
+
+                        <label for="formGroupExampleInput">Pregunta:</label>
+                        <input type="text" class="form-control" name="question" value="<%=datos.question%>">
+                        <label for="formGroupExampleInput">Opción 1:</label>
+                        <input type="text" class="form-control" name="answer1" value="<%=datos.answer1%>">
+                        <label for="formGroupExampleInput">Opción 2:</label>
+                        <input type="text" class="form-control" name="answer2" value="<%=datos.answer2%>">
+                        <label for="formGroupExampleInput">Opción 3:</label>
+                        <input type="text" class="form-control" name="answer3" value="<%=datos.answer3%>">
+                        <label for="formGroupExampleInput">Opción 4:</label>
+                        <input type="text" class="form-control" name="answer4" value="<%=datos.answer4%>">
+                        <label for="formGroupExampleInput">Opción Respuesta:</label>
+                        <input type="number" class="form-control" name="is" value="<%=datos.is%>">
+                        <label for="formGroupExampleInput">Respuesta, Comentarios:</label>
+                        <input type="text" class="form-control" name="resp" value="<%=datos.resp%>">
+                        <label for="formGroupExampleInput">Cita Biblica:</label>
+                        <input type="text" class="form-control" name="ref" value="<%=datos.ref%>">
                         <br>
                         <button type="submit" class="btn btn-primary">Editar</button>
                     </form>

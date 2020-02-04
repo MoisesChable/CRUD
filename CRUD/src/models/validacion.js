@@ -1,8 +1,8 @@
 function validar(data){
-    const {tarea, fecha} = data;
-  if(tarea.length < 3 ){
-    res.render('index')
-  }
+    const {question,answer1,answer2,answer3,answer4,is,resp,ref} = data;
+  // if(pregunta.length < 3 ){
+  //   res.render('index')
+  // }
 }
 module.exports = {
     createUsersValidacion,
