@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
  const TaskSchema = new Schema ({
   tarea: String,
-  fecha: Date
+  fecha: String
 });
 
 module.exports = mongoose.model('tasks',TaskSchema);

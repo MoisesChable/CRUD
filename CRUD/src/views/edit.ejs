@@ -1,0 +1,23 @@
+<% include admin/_header %>
+<div class="container"><br>
+    <div class="row">
+        <div class="col-xl-6 col-md-9">
+            <div class="card" >
+                <div class="card-header">
+                          Datos del registro
+                </div>
+                <div class="card-body">
+                    <form action="/update/<%= datos._id%>" method="POST">
+                        <label for="formGroupExampleInput">Tarea:</label>
+                        <input type="text" class="form-control" name="tarea" value="<%=datos.tarea%>">
+                        <label for="formGroupExampleInput">Fecha de finalización:</label>
+                        <input type="date" class="form-control" name="fecha" value="<%=datos.fecha%>">
+                        <br>
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% include admin/_footer %>
