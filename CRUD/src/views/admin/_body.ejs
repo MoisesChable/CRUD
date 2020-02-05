@@ -13,16 +13,14 @@
                        <th>#</th>
                        <th>Pregunta</th>
                        <th>Opciones</th>
-                       <th>Respuesta</th>
+                       <th># Respuesta</th>
                        <th>Comentarios</th>
                        <th>Cita Biblica</th>
-                       <th></th>
                        <th>Opciones</th>
                     </tr>
                </thead>
                <tbody>            
                 <% for(var i=0;i<datos.length; i++) {%>
-                   
                     <tr>
                         <td><%= i + 1 %></td>
                         <td><%= datos[i].question%></td>
@@ -30,8 +28,9 @@
                         <td><%= datos[i].is%></td>
                         <td><%= datos[i].resp%></td>
                         <td><%= datos[i].ref%></td>
-                        <td><a href="/admin/delete/<%= datos[i]._id %>" class="btn btn-danger">Borrar</a></td>
-                        <td><a href="/admin/edit/<%= datos[i]._id %>" class="btn btn-success">Editar</a></td>
+                       <td> <a href="/admin/edit/<%= datos[i]._id %>" class="btn btn-warning"><i class="fa fa-pencil-square-o"></i></a></td>
+                       <td>
+                        <a href="/admin/delete/<%= datos[i]._id %>" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
                     </tr>
                 <% } %>
                </tbody>

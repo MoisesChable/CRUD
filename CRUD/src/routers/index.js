@@ -5,10 +5,10 @@ const Question = require('../models/questions');
 
 router.get('/', async(req, res) => {
     const preguntas = await Question.find();
-    //res.type('text/html');
-    res.render('index', {
-        datos: preguntas
-    });
+   // res.type('text/html');
+     res.render('index', {
+        //datos: preguntas
+     });
 });
 
 router.get('/admin', async(req, res) => {
@@ -49,6 +49,5 @@ router.get('/admin/edit/:id', async(req, res) => {
 router.get('/admin/nuevo', async(req, res) => {
     res.render('nuevo');
 });
-
 
 module.exports = router;
