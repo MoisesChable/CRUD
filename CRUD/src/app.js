@@ -27,7 +27,7 @@ exp.use(express.static('public'));
 //rutas
 exp.use ('/', indexRoutes);
 //servidor
-exp.listen( app.get('port'), () => {
-   console.log('Server on port ' + app.get('port'));
+exp.listen( exp.get('port'), () => {
+   console.log('Server on port ' + exp.get('port'));
 
 });
