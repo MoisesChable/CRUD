@@ -52,8 +52,11 @@ router.get('/admin/nuevo', async(req, res) => {
 router.get('/pregunta/:number', async(req, res) => {
     const preguntas = await Question.find();
     const totalPreguntas = preguntas.length;
+    console.log(totalPreguntas);
     const { number} = req.params;
     var next = parseInt(number) + 1;
+
+    //res.type('text/html');
     res.render('preguntas', {
         datos: preguntas[number], 
         numero:next,
@@ -62,7 +65,9 @@ router.get('/pregunta/:number', async(req, res) => {
 });
 router.get('/finish', async(req, res) => {
     const preguntas = await Question.find();
+   // res.type('text/html');
      res.render('finish', {
+        //datos: preguntas
      });
 });
 

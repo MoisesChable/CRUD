@@ -1,0 +1,32 @@
+body{
+			/*background-image: url("https://moises-chable.neocities.org/juegos/vendor/img/nubes2.jpg");*/
+			background-image: url('../img/fondo.jpg');
+			background-repeat: no-repeat;
+			background-size:cover;	
+		}
+		.textFont{
+            font-family: 'Shadows Into Light', cursive;
+        }
+        .textCrew{
+            font-family: 'Bowlby One SC', cursive;
+             -webkit-text-stroke: 2px black;
+        }
+        .textPregunta{
+           font-family: 'Didact Gothic', sans-serif;
+        }
+        .textCronometro{
+        	font-family: 'VT323', monospace;
+        	color: #1b5e20;
+        	margin: 0;
+        	padding: 0;
+        }
+        .boton-opciones{
+        	font-size:1.5rem;
+        	
+        }
+        .respuesta{
+        	display:none;
+        }
+        .botonNext{
+        	display:none;
+        }

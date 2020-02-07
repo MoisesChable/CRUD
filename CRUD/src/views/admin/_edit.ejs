@@ -1,0 +1,60 @@
+<div class="container"><br>
+    <div class="row">
+        <div class="col-xl-12 col-md-9">
+            <div class="card" >
+                <div class="card-header">
+                          Datos del registro
+                </div>
+                <div class="card-body">
+                    <form class="row" action="/admin/update/<%= datos._id%>" method="POST">
+                        
+                        <div class="col-xl-12 col-md-9">
+                        <label for="formGroupExampleInput">Pregunta:</label>
+                        <input type="text" class="form-control" name="question" value="<%=datos.question%>">
+                        <br>
+                       </div>
+
+                        
+                        <div class="col-xl-3 col-md-9">
+                        <label for="formGroupExampleInput">Opción 1:</label>
+                        <input type="text" class="form-control" name="answer1" value="<%=datos.answer1%>">
+                        </div>
+                        <div class="col-xl-3 col-md-9">
+                        <label for="formGroupExampleInput">Opción 2:</label>
+                        <input type="text" class="form-control" name="answer2" value="<%=datos.answer2%>">
+                        </div>
+                        <div class="col-xl-3 col-md-9">
+                        <label for="formGroupExampleInput">Opción 3:</label>
+                        <input type="text" class="form-control" name="answer3" value="<%=datos.answer3%>">
+                        </div>
+                        <div class="col-xl-3 col-md-9">
+                        <label for="formGroupExampleInput">Opción 4:</label>
+                        <input type="text" class="form-control" name="answer4" value="<%=datos.answer4%>">
+                        <br>
+                        </div>
+
+                        <div class="col-xl-6 col-md-9">
+                        <label for="formGroupExampleInput">Respuesta, Comentarios:</label>
+                        <input type="text" class="form-control" name="resp" value="<%=datos.resp%>">
+                        <br>
+                        </div>
+                        <div class="col-xl-3 col-md-9">
+                        <label for="formGroupExampleInput">Respuesta Opción:</label>
+                        <input type="number" class="form-control" name="is" value="<%=datos.is%>">
+                        </div>
+                        
+                        <div class="col-xl-3 col-md-9">
+                        <label for="formGroupExampleInput">Cita Biblica:</label>
+                        <input type="text" class="form-control" name="ref" value="<%=datos.ref%>">
+                         <br>
+                        </div>
+                       
+                        <div class="col-xl-3">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
