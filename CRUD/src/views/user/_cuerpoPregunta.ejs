@@ -10,16 +10,16 @@
         <h2 class="white-text textPregunta"><%= datos.question%></h2> <br>
         </div>
         <div  class="col m6">
-         <h4 id="respuesta1" class="btn btn-large green darken-5 boton-opciones"><%='A. '+datos.answer1%></h4>
+         <h4 id="respuesta1" class="btn btn-large green darken-5 boton-opciones" onclick="detenerCrono('respuesta1');"><%='A. '+datos.answer1%></h4>
         </div>
         <div  class="col m6">
-         <h4 id="respuesta2" class="btn btn-large green darken-5 boton-opciones"><%='B. '+datos.answer2%></h4>
+         <h4 id="respuesta2" class="btn btn-large green darken-5 boton-opciones" onclick="detenerCrono('respuesta2');"><%='B. '+datos.answer2%></h4>
         </div>
         <div class="col m6">
-         <h4 id="respuesta3" class="btn btn-large green darken-5 boton-opciones"><%='C. '+datos.answer3%></h4>
+         <h4 id="respuesta3" class="btn btn-large green darken-5 boton-opciones" onclick="detenerCrono('respuesta3');"><%='C. '+datos.answer3%></h4>
         </div>
         <div class="col m6">
-         <h4  id="respuesta4" class="btn btn-large green darken-5 boton-opciones"><%='D. '+datos.answer4%></h4>
+         <h4  id="respuesta4" class="btn btn-large green darken-5 boton-opciones" onclick="detenerCrono('respuesta4');"><%='D. '+datos.answer4%></h4>
         </div>
         <div id="respuesta"   class="col m12 respuesta"><br>
         <h5 ><%=datos.resp%>, <%=datos.ref%></h5><br>
@@ -49,15 +49,21 @@
                    boxTiempo.style.color="red";
                 }
                 if (tiempo == 0) {
-                  detenerCrono(); 
+                  detenerCrono('ninguno'); 
                 }
                 tiempo--;
             }, 1000);
 
-    function detenerCrono(){
+    function detenerCrono(respuesta){
         clearInterval(funCrono);
-        opcionRespuestaCorrecta.classList.remove('green');
-        opcionRespuestaCorrecta.classList.add('red');
+         opcionRespuestaCorrecta.classList.remove('green');
+        if(opcionRespuesta==respuesta){
+            opcionRespuestaCorrecta.classList.add('blue');
+        }else{
+          opcionRespuestaCorrecta.classList.add('red');
+        }
+       
+        
         boxRespuesta.style.display="block";
     }
 
