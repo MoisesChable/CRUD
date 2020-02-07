@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const morgan = require ('morgan');
-const app = express();
+const exp = express();
 const mongoose = require('mongoose');
 
 //conexion a bade de datos
@@ -12,22 +12,22 @@ mongoose.connect('mongodb://localhost/crud-mongo')
 const indexRoutes = require('./routers/index');
 
 //configuraciones
-app.set('port', process.env.PORT || 3000);//define el puerto y si no existe pon el 3000
-app.set('views', path.join(__dirname,'views'));
-app.set('view engine','ejs');
+exp.set('port', process.env.PORT || 3000);//define el puerto y si no existe pon el 3000
+exp.set('views', path.join(__dirname,'views'));
+exp.set('view engine','ejs');
 
 //app.static(app.get('port'));
 
 //funciones para ejecutar antes
-app.use(morgan('dev'));
-app.use(express.urlencoded({extended: false}));
+exp.use(morgan('dev'));
+exp.use(express.urlencoded({extended: false}));
 
-app.use(express.static('public'));
+exp.use(express.static('public'));
 
 //rutas
-app.use ('/', indexRoutes);
+exp.use ('/', indexRoutes);
 //servidor
-app.listen( app.get('port'), () => {
+exp.listen( app.get('port'), () => {
    console.log('Server on port ' + app.get('port'));
 
 });
