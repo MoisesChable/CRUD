@@ -18,7 +18,6 @@ router.get('/admin', async(req, res) => {
         datos: preguntas
     });
 });
-
 router.post('/admin/add', async(req, res) => {
     //definicion de los datos
     const question = new Question(req.body);
@@ -48,6 +47,28 @@ router.get('/admin/edit/:id', async(req, res) => {
 
 router.get('/admin/nuevo', async(req, res) => {
     res.render('nuevo');
+});
+
+router.get('/pregunta/:number', async(req, res) => {
+    const preguntas = await Question.find();
+    const totalPreguntas = preguntas.length;
+    console.log(totalPreguntas);
+    const { number} = req.params;
+    var next = parseInt(number) + 1;
+
+    //res.type('text/html');
+    res.render('preguntas', {
+        datos: preguntas[number], 
+        numero:next,
+        totalPreguntas: totalPreguntas
+    });
+});
+router.get('/finish', async(req, res) => {
+    const preguntas = await Question.find();
+   // res.type('text/html');
+     res.render('finish', {
+        //datos: preguntas
+     });
 });
 
 module.exports = router;
