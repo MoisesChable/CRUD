@@ -1,16 +1,10 @@
 <% include _header %>
-<% 
-%>
+
 <div class="container"><br>
     <div class="row">
     <center>
         <div>
-          <div class="cronometro">
-             <div id="hms"></div>
-             <div class="boton start"></div>        
-             <div class="boton stop"></div>
-             <div class="boton reiniciar"></div>
-          </div>
+           <h3 id="cronometro">30</h3>
         </div>
         <div class="col m12">
         <h2 class="white-text textPregunta"><%= datos.question%></h2> <br>
@@ -42,4 +36,15 @@
         </center>
     </div>
 </div>
+<script type="text/javascript">
+    var tiempo = 29 ;
+    var boxTiempo = document.getElementById("cronometro");
+    var funCrono = setInterval(function () {
+               boxTiempo.innerHTML = tiempo ;
+                if (tiempo == 0) {
+                   clearInterval(funCrono);
+                }
+                tiempo--;
+            }, 1000);
+</script>
 <% include _footer %>
