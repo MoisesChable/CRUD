@@ -1,9 +1,53 @@
 body{
 			/*background-image: url("https://moises-chable.neocities.org/juegos/vendor/img/nubes2.jpg");*/
-			background-image: url('../img/fondo.jpg');
-			background-repeat: no-repeat;
-			background-size:cover;	
+			background-image: url('../img/fondo2.png');
+			/*background-repeat: no-repeat;
+			background-size:cover;*/
+            background-size: 100% auto;
+            overflow: hidden;
 		}
+
+        .nube{
+            width: 250px;
+            height: 200px;
+            background-size: 100% 100%;
+            position: absolute;
+        }
+        .nube:nth-child(1){
+            background-image: url('../img/nube1.png');
+            animation: movimiento1 45s infinite;
+        }
+        .nube:nth-child(2){
+            margin-top: 140px;
+            background-image: url('../img/nube2.png');
+            animation: movimiento2 30s infinite;
+        }
+        .nube:nth-child(3){
+            margin-top: 300px;
+            background-image: url('../img/nube3.png');
+            animation: movimiento3 40s infinite;
+        }
+        .nube:nth-child(4){
+            margin-top: 450px;
+            background-image: url('../img/nube4.png');
+            animation: movimiento4 50s infinite;
+        }
+        @keyframes movimiento1{
+            from {margin-left: 80%;}
+            to{ margin-left: -30%;}
+        }
+        @keyframes movimiento2{
+            from {margin-left: -10%;}
+            to{ margin-left: 100%;}
+        }
+        @keyframes movimiento3{
+            from {margin-left: 50%;}
+            to{ margin-left: -40%;}
+        }
+        @keyframes movimiento4{
+            from {margin-left: 10%;}
+            to{ margin-left: 100%;}
+        }
 		.textFont{
             font-family: 'Shadows Into Light', cursive;
         }
@@ -13,6 +57,7 @@ body{
         }
         .textPregunta{
            font-family: 'Didact Gothic', sans-serif;
+           -webkit-text-stroke: 2px black;
         }
         .textCronometro{
         	font-family: 'VT323', monospace;

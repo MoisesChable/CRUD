@@ -63,6 +63,7 @@ router.get('/pregunta/:number', async(req, res) => {
         totalPreguntas: totalPreguntas
     });
 });
+
 router.get('/finish', async(req, res) => {
     const preguntas = await Question.find();
    // res.type('text/html');
