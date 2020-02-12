@@ -1,5 +1,5 @@
 <% var cont = 0;%>
-<audio id="audioFondoPregunta" autoplay="true" src="../audio/music-fondo.mp3"></audio>
+<audio id="audioFondoPregunta" autoplay loop src="../audio/music-fondo.mp3"></audio>
 <div class="container">
 <div class="row">
 <div class="nube"></div>
@@ -13,7 +13,7 @@
 	</div>
                     
 	<div class="col m12">
-	<a href="/pregunta/<%= cont %>" class="waves-effect waves-light btn-large pulse light-blue darken-3">EMPEZAR</a>
+	<a href="/pregunta/<%= cont %>" class="waves-effect waves-light btn-large pulse light-blue darken-3" onmouseover="butonHover();">EMPEZAR</a>
 	<br><br><p>*Tienes como máximo 15 segundos para contestar las preguntas<p>
 	</div>
 </center>
