@@ -1,6 +1,6 @@
 <!-- <embed id="audioTiempo" src="../audio/tiempo.mp3"  autostart="true" loop="true" width="0" height="0" />
 <embed id="audioFondoPregunta" src="../audio/fondo-pregunta.mp3"  autostart="true" loop="true" width="0" height="0" /> --> 
-<audio id="audioTiempo" autoplay="true" src="../audio/tiempo.mp3"></audio>
+<audio id="audioTiempo" autoplay loop src="../audio/tiempo.mp3"></audio>
 <audio id="audioTiempoAcelerado" src="../audio/tiempo2.mp3"></audio>
 <audio id="audioFondoPregunta" autoplay loop src="../audio/fondo-pregunta.mp3"></audio>
 <audio id="audioStopIncorrecto" src="../audio/incorrecto.mp3"></audio>
@@ -19,18 +19,26 @@
         <div  class="col m12">
         <h3 class="white-text textCrew"><%= datos.question%></h3> <br>
         </div>
+        <% if(datos.answer1) {%>
         <div  class="col m6">
          <h4 id="respuesta1" class="btn btn-large amber darken-2 boton-opciones" onclick="detenerCrono('respuesta1');" onmouseover="butonHover();"><%='A. '+datos.answer1%></h4>
         </div>
+        <% }%>
+        <% if(datos.answer2) {%>
         <div  class="col m6">
          <h4 id="respuesta2" class="btn btn-large amber darken-2 boton-opciones" onclick="detenerCrono('respuesta2');" onmouseover="butonHover();"><%='B. '+datos.answer2%></h4>
         </div>
+         <% }%>
+        <% if(datos.answer3) {%>
         <div class="col m6">
          <h4 id="respuesta3" class="btn btn-large amber darken-2 boton-opciones" onclick="detenerCrono('respuesta3');" onmouseover="butonHover();"><%='C. '+datos.answer3%></h4>
         </div>
+         <% }%>
+        <% if(datos.answer4) {%>
         <div class="col m6">
          <h4  id="respuesta4" class="btn btn-large amber darken-2 boton-opciones" onclick="detenerCrono('respuesta4');" onmouseover="butonHover();"><%='D. '+datos.answer4%></h4>
         </div>
+         <% }%>
         <div id="respuesta"   class="col m12 respuesta">
             <br>
         <h5></span> <%=datos.resp%>. <%=datos.ref%></h5><br>
@@ -58,6 +66,8 @@
     var audio3 = document.getElementById("audioStopIncorrecto");
     var audio4 = document.getElementById("audioTiempoAcelerado");
     var audio5 = document.getElementById("audioStopCorrecto");
+    var audio6 = document.getElementById("audioFondoBienvenida");
+    
 
     var funCrono = setInterval(function () {
                boxTiempo.innerHTML = tiempo ;
