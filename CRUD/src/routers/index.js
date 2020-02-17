@@ -1,19 +1,13 @@
 const express = require('express');
 const router = express.Router();
-//const Task = require('../models/task');
 const Question = require('../models/questions');
 
 router.get('/', async(req, res) => {
-    const preguntas = await Question.find();
-   // res.type('text/html');
-     res.render('index', {
-        //datos: preguntas
-     });
+     res.render('index');
 });
 
 router.get('/admin', async(req, res) => {
     const preguntas = await Question.find();
-    //res.type('text/html');
     res.render('form', {
         datos: preguntas
     });
@@ -54,8 +48,6 @@ router.get('/question/:number', async(req, res) => {
     const totalPreguntas = preguntas.length;
     const { number} = req.params;
     var next = parseInt(number) + 1;
-
-    //res.type('text/html');
     res.render('preguntas', {
         datos: preguntas[number], 
         numero:next,
@@ -64,11 +56,7 @@ router.get('/question/:number', async(req, res) => {
 });
 
 router.get('/finish', async(req, res) => {
-    const preguntas = await Question.find();
-   // res.type('text/html');
-     res.render('finish', {
-        //datos: preguntas
-     });
+   res.render('finish');
 });
 
 module.exports = router;
