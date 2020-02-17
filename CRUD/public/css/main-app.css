@@ -76,6 +76,13 @@ body{
         	display:none;
         }
         .footer-moy{
-            position: absolute;
-            margin-bottom: 0;
+               /*position:relative;
+               height:500px;*/
+               padding-top: 8px;
+               padding-bottom: 8px;
+               background-color: #f2f2f2;
         }
+        /*.copyright-moy{
+               bottom: 0px; 
+               position: absolute;
+        }*/
