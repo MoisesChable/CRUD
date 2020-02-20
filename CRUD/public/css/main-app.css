@@ -5,8 +5,12 @@ body{
 			background-size:cover;*/
             background-size: 100% auto;
             overflow: hidden;
+            cursor: url('../img/pointer.png'),default;
+            /*cursor:zoom-in;*/
 		}
-
+.btn{
+    cursor: url('../img/pointer.png'),default;
+}
         .nube{
             width: 250px;
             height: 200px;
