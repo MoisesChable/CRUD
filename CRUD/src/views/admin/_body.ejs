@@ -23,9 +23,9 @@
                         <td><%= datos[i].is%></td>
                         <td><%= datos[i].resp%></td>
                         <td><%= datos[i].ref%></td>
-                       <td> <a href="/edit/<%= datos[i]._id %>" class="btn btn-warning" style="    margin-bottom: .4rem;width: 35px;"><i class="fa fa-pencil-square-o"></i></a><br><!-- </td>
+                       <td> <a  href="/edit/<%= datos[i]._id %>" class="btn btn-warning" style="    margin-bottom: .4rem;width: 35px;"><i class="fa fa-pencil-square-o"></i></a><br><!-- </td>
                        <td> -->
-                        <a href="/delete/<%= datos[i]._id %>" class="btn btn-danger" style="    margin-bottom: .4rem;width: 35px;"><i class="fa fa-trash"></i></a></td>
+                        <a data-toggle="modal" data-target="#exampleModal" onclick="delet('<%= datos[i].question %>','<%= datos[i].id %>');" class="btn btn-danger" style="margin-bottom: .4rem;width: 35px;"><i class="fa fa-trash"></i></a></td>
                     </tr>
                 <% } %>
                </tbody>
@@ -33,3 +33,34 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+  function delet(question,id){
+    document.getElementById("dataQuestion").innerHTML=question;
+    var idQuestion = '/delete/'+id ;
+    var enlace = document.getElementById("deleteQuestion");
+    enlace.href = idQuestion;
+  }
+</script>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Eliminar pregunta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <strong>¿Estas seguro que deseas eliminar la siguiente pregunta?</strong><br><br>
+       <p id="dataQuestion"><p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <a id ="deleteQuestion" type="button" class="btn btn-danger" >Eliminar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
