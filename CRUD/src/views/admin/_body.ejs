@@ -18,8 +18,24 @@
                 <% for(var i=0;i<datos.length; i++) {%>
                     <tr>
                         <td><%= i + 1 %></td>
-                        <td><%= datos[i].question%></td>
-                        <td><%= '1.'+datos[i].answer1%><br><%='2.'+ datos[i].answer2%><br><%='3.'+ datos[i].answer3%><br><%='4.'+ datos[i].answer4  %></td>
+                        <td><%=datos[i].question%></td>
+                        <td>
+                          <% if(datos[i].answer1){ %>
+                          <%='1. '+datos[i].answer1 %>
+                          <% } %>
+                          <br>
+                          <% if(datos[i].answer2){ %>
+                          <%='2. '+ datos[i].answer2%>
+                          <% } %>
+                          <br>
+                          <% if(datos[i].answer3){ %>
+                          <%='3. '+ datos[i].answer3%>
+                          <% } %>
+                          <br>
+                          <% if(datos[i].answer4){ %>
+                          <%='4. '+ datos[i].answer4%>
+                          <% } %>
+                        </td>
                         <td><%= datos[i].is%></td>
                         <td><%= datos[i].resp%></td>
                         <td><%= datos[i].ref%></td>
