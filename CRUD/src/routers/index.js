@@ -43,20 +43,25 @@ router.get('/nuevo', async(req, res) => {
     res.render('nuevo');
 });
 
-router.get('/question/:number', async(req, res) => {
-    const preguntas = await Question.find();
-    const totalPreguntas = preguntas.length;
-    const { number} = req.params;
-    var next = parseInt(number) + 1;
+router.get('/question/:id', async(req, res) => {
+    const {id} = req.params;
+    await Question.update({ _id: id }, {status:"false"});
+    const preguntas = await Question.findById({_id:id});
+   
     res.render('preguntas', {
-        datos: preguntas[number], 
-        numero:next,
-        totalPreguntas: totalPreguntas
+        datos: preguntas
     });
 });
 
 router.get('/finish', async(req, res) => {
    res.render('finish');
+});
+
+router.get('/elegir', async(req, res) =>{
+  const preguntas = await Question.find().sort({dificultad:1});
+  res.render('elegir', {
+    datos: preguntas
+  })
 });
 
 module.exports = router;

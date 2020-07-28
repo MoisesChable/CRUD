@@ -9,7 +9,9 @@ const Schema = mongoose.Schema;
   answer4: String,
   is: String,
   resp: String,
-  ref: String
+  ref: String,
+  dificultad: String,
+  status: Boolean
 });
 
 module.exports = mongoose.model('questions',QuestionSchema);

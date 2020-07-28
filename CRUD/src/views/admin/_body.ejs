@@ -17,7 +17,12 @@
                <tbody>            
                 <% for(var i=0;i<datos.length; i++) {%>
                     <tr>
-                        <td><%= i + 1 %></td>
+                      <% if(datos[i].status==true){ %>
+                       <td class="btn btn-light"><%= i + 1 %> </td>
+                        <% } %>
+                         <% if(datos[i].status==false){ %>
+                       <td class="btn btn-secondary" ><%= i + 1 %> </td>
+                        <% } %>
                         <td><%=datos[i].question%></td>
                         <td>
                           <% if(datos[i].answer1){ %>
@@ -38,7 +43,15 @@
                         </td>
                         <td><%= datos[i].is%></td>
                         <td><%= datos[i].resp%></td>
-                        <td><%= datos[i].ref%></td>
+                        <% if(datos[i].dificultad=="1"){ %>
+                        <td class="btn btn-success"><%= datos[i].ref%></td>
+                        <% } %>
+                        <% if(datos[i].dificultad=="2"){ %>
+                        <td class="btn btn-warning"><%= datos[i].ref%></td>
+                        <% } %>
+                        <% if(datos[i].dificultad=="3"){ %>
+                        <td class="btn btn-danger"><%= datos[i].ref%></td>
+                        <% } %>
                        <td> <a  href="/edit/<%= datos[i]._id %>" class="btn btn-warning" style="    margin-bottom: .4rem;width: 35px;"><i class="fa fa-edit"></i></a><br><!-- </td>
                        <td> -->
                         <a data-toggle="modal" data-target="#exampleModal" onclick="delet('<%= datos[i].question %>','<%= datos[i].id %>');" class="btn btn-danger" style="margin-bottom: .4rem;width: 35px;"><i class="fa fa-trash-alt"></i></a></td>

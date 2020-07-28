@@ -1,0 +1,40 @@
+<% var cont = 0;%>
+<audio id="audioFondoBienvenida" autoplay loop src="../audio/music-fondo.mp3"></audio>
+<div class="container">
+<div class="row">
+<div class="nube"></div>
+<div class="nube"></div>
+<div class="nube"></div>
+<div class="nube"></div>
+<div class="animated fadeInUp">
+<center>
+	   <% for(var i=0;i<datos.length; i++) {%>
+	   <% if(datos[i].status==false){ %>
+	 <div  class="col m2">
+         <a class="btn btn-large grey darken-3 boton-opciones" style="margin-top:20px;" ><%=i+1%></a>
+                 </div>
+       <% } else{%>
+	   <% if(datos[i].dificultad=="1"){ %>
+	 <div  class="col m2">
+         <a href="/question/<%= datos[i]._id %>" class="btn btn-large green darken-2 boton-opciones" style="margin-top:20px;" ><%=i+1%></a>
+        </div>
+       
+       <% } %>
+      <% if(datos[i].dificultad=="2"){ %>
+	 <div  class="col m2">
+         <a href="/question/<%= datos[i]._id %>" class="btn btn-large amber darken-2 boton-opciones" style="margin-top:20px;" ><%=i+1%></a>
+        </div>
+        
+       <% } %>
+     <% if(datos[i].dificultad=="3"){ %>
+	 <div  class="col m2">
+         <a  href="/question/<%= datos[i]._id %>" class="btn btn-large red darken-2 boton-opciones" style="margin-top:20px;" ><%=i+1%></a>
+        </div>
+       <% } %>
+       
+<% } %>
+	   <% } %>
+</center>
+</div>
+</div>
+</div>
