@@ -5,7 +5,7 @@ const exp = express();
 const mongoose = require('mongoose');
 
 //conexion a bade de datos
-mongoose.connect('mongodb://localhost/crud-mongo')
+mongoose.connect('mongodb+srv://moises:lejandro12A@cluster0.iell7.mongodb.net/crud-mongo?retryWrites=true&w=majority')
 .then(db => console.log('DB conectada'))
 .catch(err=> console.log(err));
 //rutas importadas
